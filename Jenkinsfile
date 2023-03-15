@@ -13,10 +13,15 @@ pipeline {
         }
       stage('Docker Build to Image') {
              steps {
-                  script{
-                          imageName=docker.build "akanksha/calculatorDevOps"
-                   }
+                  sh 'docker build -t imshukla/calculator:latest .'
             }
         }
+      stage('Push Docker Image to Docker Hub') {
+              steps {
+                        withDockerRegistry([ credentialsId: "docker-cred", url: "" ]){
+                        sh 'docker push imshukla/calculator:latest'
+                        }
+              }
+      }
     }
 }
