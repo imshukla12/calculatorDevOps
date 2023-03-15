@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Git') {
             steps {
-                git url: 'https://github.com/imshukla12/calculatorDevOps.git' , branch: 'main'
+                git url: 'https://github.com/imshukla12/calculatorDevOps.git' , branch: 'master'
             }
         }
       stage('Maven Build') {
