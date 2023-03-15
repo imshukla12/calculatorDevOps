@@ -14,7 +14,7 @@ pipeline {
       stage('Docker Build to Image') {
              steps {
                   script{
-                          imageName=docker.build "akanksha/calculator"
+                          imageName=docker.build "akanksha/calculatorDevOps"
                    }
             }
         }
