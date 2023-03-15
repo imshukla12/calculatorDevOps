@@ -20,7 +20,7 @@ pipeline {
               steps {
                         withDockerRegistry([ credentialsId: "docker-cred", url: "" ]){
                         sh 'docker push imshukla/calculator:latest'
-                        }
+                    }
               }
       }
     }
