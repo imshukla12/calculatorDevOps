@@ -11,5 +11,12 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+      stage('Docker Build to Image') {
+             steps {
+                  script{
+                          imageName=docker.build "akanksha/calculator"
+                   }
+            }
+        }
     }
 }
