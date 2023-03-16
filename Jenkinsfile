@@ -11,6 +11,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+      stage('Testing project') {
+             steps {
+                sh "mvn test"
+             }
+        }
       stage('Docker Build to Image') {
              steps {
                   sh 'docker build -t imshukla/calculator:latest .'
