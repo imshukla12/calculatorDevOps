@@ -1,0 +1,2 @@
+[localhost]
+akanksha ansible_connection=local
