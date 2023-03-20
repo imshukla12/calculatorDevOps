@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Git') {
+        stage('Git Pull') {
             steps {
                 git url: 'https://github.com/imshukla12/calculatorDevOps.git' , branch: 'master'
             }
@@ -11,11 +11,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-      stage('Testing project') {
-             steps {
-                sh "mvn test"
-             }
-        }
+//       stage('Testing project') {
+//              steps {
+//                 sh "mvn test"
+//              }
+//         }
       stage('Docker Build to Image') {
              steps {
                   sh 'docker build -t imshukla/calculator:latest .'
@@ -38,6 +38,6 @@ pipeline {
                       playbook: 'playbook.yml',
                       sudoUser: null
                   }
-              }
+      }
     }
 }
