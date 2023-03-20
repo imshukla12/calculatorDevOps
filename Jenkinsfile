@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Git') {
+        stage('Git Pull') {
             steps {
                 git url: 'https://github.com/imshukla12/calculatorDevOps.git' , branch: 'master'
             }
